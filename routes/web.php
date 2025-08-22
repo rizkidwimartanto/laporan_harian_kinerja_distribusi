@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(LaporanHarianController::class)->group(function(){
     Route::get('/', 'index')->name('laporan-harian.index');
+    Route::get('/admin', 'admin')->name('laporan-harian.admin');
     Route::get('/laporan-harian/create', 'create')->name('laporan-harian.create');
     Route::post('/laporan-harian', 'store')->name('laporan-harian.store');
     Route::get('/laporan-harian/{id}', 'show')->name('laporan-harian.show');

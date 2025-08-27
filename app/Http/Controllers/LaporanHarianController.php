@@ -15,7 +15,9 @@ class LaporanHarianController extends Controller
         return view('index', compact('laporanHariIni'));
     }
     public function admin(){
-      return view('admin');
+      $laporanharian = LaporanHarianModel::all();
+
+      return view('admin', compact('laporanharian'));
     }
     public function create(){
       return view('tambah_laporan');

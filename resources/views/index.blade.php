@@ -48,15 +48,20 @@
 
 <body>
     <div class="container-fluid">
-        <h4 class="text-center text-dark title_content">Laporan Harian Kinerja Distribusi <br>UP3 Grobogan</h4>
+        <a href="{{route('laporan-harian.admin')}}">
+            <img src="{{ asset('public/img/danantara.png') }}" alt="Danantara" width="170px" height="100%"
+                style="position: relative; top: 20px; left:14px;">
+        </a>
+        <h4 class="text-center text-dark title_content mt-4">Laporan Harian Kinerja Distribusi UP3 Grobogan</h4>
+        <h4 class="text-center">{{ $tanggal_sekarang }}</h4>
         @if ($laporanHariIni->isEmpty())
-            <p class="text-center">Belum ada laporan untuk hari ini.</p>
+            <h5 class="text-center">Belum ada laporan untuk hari ini.</h5>
         @else
             @foreach ($laporanHariIni as $laporan)
                 <div class="row" style="margin-top: 25px;">
                     <div class="col-lg-6 col-md-12">
                         <div class="d-grid gap-2 mb-2">
-                            <button class="btn btn-primary disabled">Keandalan & K3</button>
+                            <button class="btn button-index btn-primary disabled">Keandalan & K3</button>
                         </div>
                         <div class="container">
                             <p><img src="{{ asset('public/img/weather.png') }}" alt="cuaca" width="30px"
@@ -66,102 +71,247 @@
                                 <span>
                                     <img src="{{ asset('public/img/report.png') }}" alt="report" width="30px"
                                         height="30px">
-                                    Total WO
+                                    Total WO/P0
                                 </span>
-                                <button class="btn btn-primary"
-                                    style="width: 200px; height: 37px; vertical-align: middle;"><span
-                                        style="font-size: 15px; font-weight:bold;">{{ $laporan->total_wo }}</span></button>
-                                <button class="btn btn-primary"
-                                    style="width: 200px; height: 37px; vertical-align: middle;"><span
-                                        style="font-size: 15px; font-weight:bold;">{{ $laporan->total_wo }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 210px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->total_wo }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 210px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->total_p0 }}</span></button>
                             </p>
                             <p class="d-flex justify-content-between">
                                 <span>
                                     <img src="{{ asset('public/img/customer-service.png') }}" alt="customer-service"
-                                        width="30px" height="30px"> Total VCC
+                                        width="30px" height="30px"> Total VCC (Merah/Hitam)
                                 </span>
-                                <button class="btn btn-primary"
-                                    style="width: 200px; height: 37px; vertical-align: middle;"><span
-                                        style="font-size: 15px; font-weight:bold;">{{ $laporan->total_wo }}</span></button>
-                                <button class="btn btn-primary"
-                                    style="width: 200px; height: 37px; vertical-align: middle;"><span
-                                        style="font-size: 15px; font-weight:bold;">{{ $laporan->total_wo }}</span></button>
+                                <button class="btn button-index btn-secondary"
+                                    style="width: 210px; height: 37px; vertical-align: middle; font-size:11px;"><span
+                                        style="font-weight:bold;">{{ $laporan->total_vcc_merah }}</span></button>
+                                <button class="btn button-index btn-secondary"
+                                    style="width: 210px; height: 37px; vertical-align: middle; font-size:11px;"><span
+                                        style="font-weight:bold;">{{ $laporan->total_vcc_hitam }}</span></button>
                             </p>
                             <p class="d-flex justify-content-between">
                                 <span>
-                                    <img src="{{ asset('public/img/performance.png') }}" alt="performance" width="30px"
-                                        height="30px">
+                                    <img src="{{ asset('public/img/performance.png') }}" alt="performance"
+                                        width="30px" height="30px">
                                     Yantek Performance
                                 </span>
-                                 <button class="btn btn-primary"
-                                    style="width: 200px; height: 37px; vertical-align: middle;"><span
-                                        style="font-size: 15px; font-weight:bold;">{{ $laporan->total_wo }}</span></button>
-                                <button class="btn btn-primary"
-                                    style="width: 200px; height: 37px; vertical-align: middle;"><span
-                                        style="font-size: 15px; font-weight:bold;">{{ $laporan->total_wo }}</span></button>
+                                <button class="btn button-index text-light"
+                                    style="width: 210px; height: 37px; vertical-align: middle; position: relative; font-size:11px; background-color: rgb(255, 0, 0);">Under
+                                    Perf (<35) : {{ $laporan->yantek_performance_under_perf }}</button>
+                                        <button class="btn button-index text-light"
+                                            style="width: 210px; height: 37px; vertical-align: middle; position: relative; font-size:11px; background-color: rgb(177, 170, 28);">Middle
+                                            Perf (35-70) : {{ $laporan->yantek_performance_middle_perf }}</button>
+                                        <button class="btn button-index text-light"
+                                            style="width: 210px; height: 37px; vertical-align: middle; position: relative; font-size:11px; background-color: rgba(26, 159, 26, 0.699);">Top
+                                            Perf (>70) : {{ $laporan->yantek_performance_top_perf }}</button>
                             </p>
-                            <p>
-                                <img src="{{ asset('public/img/pln_mobile.jpg') }}" alt="pln_mobile" width="30px"
-                                    height="30px">
-                                Rating 1-2 PLN Mobile
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/pln_mobile.jpg') }}" alt="pln_mobile" width="30px"
+                                        height="30px">
+                                    Rating PLN Mobile
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 100%; height: 37px; vertical-align: middle; font-size:11px; position: relative; left:5px;"><span
+                                        style="font-weight:bold;">{{ $laporan->rating_plnmobile }}</span></button>
                             </p>
-                            <p><img src="{{ asset('public/img/alarm.png') }}" alt="alarm" width="30px"
-                                    height="30px"> RPT
-                                / RCT</p>
-                            <p><img src="{{ asset('public/img/kinerja.png') }}" alt="kinerja" width="30px"
-                                    height="30px">
-                                Kinerja PMT (CBOG/REC/SSO)</p>
-                            <p><img src="{{ asset('public/img/anomali.png') }}" alt="anomali" width="30px"
-                                    height="30px">
-                                Anomali WO</p>
-                            <p><img src="{{ asset('public/img/safety.jpg') }}" alt="safety" width="30px"
-                                    height="30px">
-                                Safety Performance</p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/alarm.png') }}" alt="alarm" width="30px"
+                                        height="30px"> RPT
+                                    / RCT
+                                </span>
+                                <button class="btn button-index btn-secondary"
+                                    style="width: 210px; height: 37px; vertical-align: middle; font-size:11px;"><span
+                                        style="font-weight:bold;">{{ $laporan->rpt }}</span></button>
+                                <button class="btn button-index btn-secondary"
+                                    style="width: 210px; height: 37px; vertical-align: middle; font-size:11px;"><span
+                                        style="font-weight:bold;">{{ $laporan->rct }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/kinerja.png') }}" alt="kinerja" width="30px"
+                                        height="30px">
+                                    Kinerja PMT (CBOG/REC/SSO)
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 150px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->kinerja_pmt }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->cbog_rec_sso }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/anomali.png') }}" alt="anomali" width="30px"
+                                        height="30px">
+                                    Anomali WO
+                                </span>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; background-color: rgb(255, 0, 0);"><span
+                                        style="font-weight:bold;">Lap Berulang : {{ $laporan->anomali_wo_lapberulang }}</span></button>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; background-color: rgb(177, 170, 28);"><span
+                                        style="font-weight:bold;">Skip Step : {{ $laporan->anomali_wo_skipstep }}</span></button>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; background-color: rgba(26, 159, 26, 0.699);"><span
+                                        style="font-weight:bold;">Rating Negatif : {{ $laporan->anomali_wo_ratingnegatif }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/safety.jpg') }}" alt="safety" width="30px"
+                                        height="30px">
+                                    Safety Performance
+                                </span>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px; background-color: rgb(255, 0, 0);"><span
+                                        style="font-weight:bold;">Unsafe Action : {{ $laporan->safety_performance_unsafeaction }}</span></button>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; background-color: rgb(177, 170, 28);"><span
+                                        style="font-weight:bold;">Unsafe Condition : {{ $laporan->safety_performance_unsafecondiction }}</span></button>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; background-color: rgba(26, 159, 26, 0.699);"><span
+                                        style="font-weight:bold;">Nearmiss : {{ $laporan->safety_performance_nearmiss }}</span></button>
+                                <button class="btn button-index text-light"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; background-color: rgba(26, 35, 159, 0.699);"><span
+                                        style="font-weight:bold;">Accident : {{ $laporan->safety_performance_accident }}</span></button>
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="d-grid gap-2 mb-2">
-                            <button class="btn btn-primary disabled">Efisiensi</button>
+                            <button class="btn button-index btn-primary disabled">Efisiensi</button>
                         </div>
                         <div class="container">
-                            <p><img src="{{ asset('public/img/target.png') }}" alt="target" width="30px"
-                                    height="30px">
-                                Target P2TL</p>
-                            <p><img src="{{ asset('public/img/realisasi.png') }}" alt="realisasi" width="30px"
-                                    height="30px"> Realisasi P2TL</p>
-                            <p><img src="{{ asset('public/img/top_performance.png') }}" alt="top_performance"
-                                    width="30px" height="30px"> Top Performance</p>
-                            <p><img src="{{ asset('public/img/bottom_performance.png') }}" alt="bottom_performance"
-                                    width="30px" height="30px"> Bottom Performance</p>
-                            <p><img src="{{ asset('public/img/meter_prabayar.png') }}" alt="meter_prabayar"
-                                    width="30px" height="30px"> Ganti Meter Tua Prabayar</p>
-                            <p><img src="{{ asset('public/img/meter_pascabayar.png') }}" alt="meter_pascabayar"
-                                    width="30px" height="30px"> Ganti Meter Tua Pascabayar</p>
-                            <p><img src="{{ asset('public/img/saldo.png') }}" alt="saldo" width="30px"
-                                    height="30px">
-                                Saldo Meter Tua</p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/target.png') }}" alt="target" width="30px"
+                                        height="30px">
+                                    Target P2TL
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 70%; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->target_p2tl }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/realisasi.png') }}" alt="realisasi"
+                                        width="30px" height="30px"> Realisasi P2TL
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 70%; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->realisasi_p2tl }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/top_performance.png') }}" alt="top_performance"
+                                        width="30px" height="30px"> Top Performance
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 180px; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->top_performance }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 180px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->jumlah_kwhmeter_top_performance }} kWh meter</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/bottom_performance.png') }}"
+                                        alt="bottom_performance" width="30px" height="30px"> Bottom Performance
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 180px; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->bottom_performance }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 180px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->jumlah_kwhmeter_bottom_performance }} kWh meter</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/meter_prabayar.png') }}" alt="meter_prabayar"
+                                        width="30px" height="30px"> Ganti Meter Tua Prabayar
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 70%; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->ganti_meter_tua_prabayar }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/meter_pascabayar.png') }}" alt="meter_pascabayar"
+                                        width="30px" height="30px"> Ganti Meter Tua Pascabayar
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 70%; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->ganti_meter_tua_pascabayar }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/saldo.png') }}" alt="saldo" width="30px"
+                                        height="30px">
+                                    Saldo Meter Tua
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 70%; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->saldo_meter_tua }}</span></button>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="d-grid gap-2 mb-2">
-                            <button class="btn btn-primary disabled">Rekapitulasi ENS / Saving KWH</button>
+                            <button class="btn button-index btn-primary disabled">Rekapitulasi ENS / Saving KWH</button>
                         </div>
                         <div class="container">
-                            <p><img src="{{ asset('public/img/tidak_padam.png') }}" alt="tidak_padam" width="30px"
-                                    height="30px">
-                                Tidak Padam</p>
-                            <p><img src="{{ asset('public/img/padam.png') }}" alt="padam" width="30px"
-                                    height="30px">
-                                Padam</p>
-                            <p><img src="{{ asset('public/img/sistem.png') }}" alt="sistem" width="30px"
-                                    height="30px"> Beban Sistem</p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/tidak_padam.png') }}" alt="tidak_padam"
+                                        width="30px" height="30px">
+                                    TIDAK PADAM (PDKB/SAVING KWH PDKB)
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->tidak_padam_pdkb }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->tidak_padam_savingpdkb }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/padam.png') }}" alt="padam" width="30px"
+                                        height="30px">
+                                    PADAM (NON PDKB /ENS)
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->padam_nonpdkb }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->padam_ens }}</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <span>
+                                    <img src="{{ asset('public/img/sistem.png') }}" alt="sistem" width="30px"
+                                        height="30px"> Beban Sistem
+                                </span>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative; right: 20px;"><span
+                                        style="font-weight:bold;">{{ $laporan->beban_sistem_pagi }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->beban_sistem_siang }}</span></button>
+                                <button class="btn button-index btn-primary"
+                                    style="width: 200px; height: 37px; vertical-align: middle; font-size:11px; position: relative;"><span
+                                        style="font-weight:bold;">{{ $laporan->beban_sistem_malam }}</span></button>
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="d-grid gap-2 mb-2">
-                            <button class="btn btn-primary disabled">Pelanggan VVIP / VIP / Prioritas</button>
+                            <button class="btn button-index btn-primary disabled">Pelanggan VVIP / VIP / Prioritas</button>
                         </div>
                         <table class="table table-borderless custom-table">
                             <thead>
@@ -173,14 +323,19 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Kategori 1</td>
-                                    <td>Jumlah 1</td>
-                                    <td>Padam 1</td>
+                                    <td>Kategori i VVIP</td>
+                                    <td>{{ $laporan->pelanggan_vvip_jumlahpelanggan }}</td>
+                                    <td>{{ $laporan->pelanggan_vvip_padam }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Kategori 1</td>
-                                    <td>Jumlah 1</td>
-                                    <td>Padam 1</td>
+                                    <td>Kategori ii VIP</td>
+                                    <td>{{ $laporan->pelanggan_vip_jumlahpelanggan }}</td>
+                                    <td>{{ $laporan->pelanggan_vip_padam }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kategori iii Prioritas</td>
+                                    <td>{{ $laporan->pelanggan_prioritas_jumlahpelanggan }}</td>
+                                    <td>{{ $laporan->pelanggan_prioritas_padam }}</td>
                                 </tr>
                             </tbody>
                         </table>

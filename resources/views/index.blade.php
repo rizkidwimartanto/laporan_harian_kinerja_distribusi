@@ -69,7 +69,7 @@
         @else
             @foreach ($laporanHariIni as $laporan)
                 <div class="row" style="margin-top: 25px;">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="d-grid gap-2">
                             <button class="btn btn-dark disabled">Keandalan & K3</button>
                         </div>
@@ -206,7 +206,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="d-grid gap-2">
                             <button class="btn btn-danger disabled">Efisiensi</button>
                         </div>
@@ -283,7 +283,7 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="d-grid gap-2">
                             <button class="btn btn-primary disabled">Rekapitulasi ENS / Saving
                                 KWH</button>
@@ -325,7 +325,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="d-grid gap-2">
                             <button class="btn btn-secondary disabled">Pelanggan VVIP / VIP /
                                 Prioritas</button>

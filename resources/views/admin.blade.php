@@ -38,7 +38,10 @@
             Selamat datang di dashboard Admin Laporan Harian Kinerja Distribusi! Di sini Anda dapat mengelola
             laporan terkait distribusi.
         </div>
-        <a href="{{ route('laporan-harian.create') }}" class="btn btn-primary mb-3">Tambah</a>
+        <div class="d-flex justify-content-start">
+            <a href="{{ route('laporan-harian.create') }}" class="btn btn-primary mb-3 m-1">Tambah</a>
+            <a href="{{ route('laporan-harian.index') }}" class="btn btn-secondary mb-3 m-1">Halaman Utama</a>
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered table-hover" id="tabel_data_laporan">
                 <thead class="table-danger text-center align-middle">
@@ -107,7 +110,8 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="{{ route('laporan-harian.update', $laporan->id) }}">
+                                                <form method="POST"
+                                                    action="{{ route('laporan-harian.update', $laporan->id) }}">
                                                     @csrf
                                                     @method('PUT')
                                                     <input type="hidden" name="id" value="{{ $laporan->id }}">
@@ -121,12 +125,18 @@
                                                                     <option value="Cerah"
                                                                         {{ old('cuaca', $laporan->cuaca) == 'Cerah' ? 'selected' : '' }}>
                                                                         Cerah</option>
+                                                                    <option value="Mendung"
+                                                                        {{ old('cuaca', $laporan->cuaca) == 'Mendung' ? 'selected' : '' }}>
+                                                                        Mendung</option>
+                                                                    <option value="Gerimis"
+                                                                        {{ old('cuaca', $laporan->cuaca) == 'Gerimis' ? 'selected' : '' }}>
+                                                                        Gerimis</option>
                                                                     <option value="Hujan"
                                                                         {{ old('cuaca', $laporan->cuaca) == 'Hujan' ? 'selected' : '' }}>
                                                                         Hujan</option>
-                                                                    <option value="Berawan"
-                                                                        {{ old('cuaca', $laporan->cuaca) == 'Berawan' ? 'selected' : '' }}>
-                                                                        Berawan</option>
+                                                                    <option value="Hujan Petir"
+                                                                        {{ old('cuaca', $laporan->cuaca) == 'Hujan Petir' ? 'selected' : '' }}>
+                                                                        Hujan Petir</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -165,7 +175,8 @@
                                                                 <label for="total_vcc_hitam" class="form-label">Total
                                                                     VCC Hitam</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="total_vcc_hitam" name="total_vcc_hitam" required
+                                                                    id="total_vcc_hitam" name="total_vcc_hitam"
+                                                                    required
                                                                     value="{{ old('total_vcc_hitam', $laporan->total_vcc_hitam) }}">
                                                             </div>
                                                         </div>
@@ -691,9 +702,10 @@
                 ordering: true,
                 searching: true,
                 responsive: true,
-                columnDefs: [
-                    {width: "200px", targets: 1},
-                ]
+                columnDefs: [{
+                    width: "200px",
+                    targets: 1
+                }, ]
             });
         });
     </script>

@@ -74,9 +74,13 @@
                            <select name="cuaca" id="cuaca" class="form-select" required>
                                <option value="" selected disabled>Pilih Cuaca</option>
                                <option value="Cerah" {{ old('cuaca') == 'Cerah' ? 'selected' : '' }}>Cerah</option>
-                               <option value="Hujan" {{ old('cuaca') == 'Hujan' ? 'selected' : '' }}>Hujan</option>
-                               <option value="Berawan" {{ old('cuaca') == 'Berawan' ? 'selected' : '' }}>Berawan
+                               <option value="Mendung" {{ old('cuaca') == 'Mendung' ? 'selected' : '' }}>Mendung
                                </option>
+                               <option value="Gerimis" {{ old('cuaca') == 'Gerimis' ? 'selected' : '' }}>Gerimis
+                               </option>
+                               <option value="Hujan" {{ old('cuaca') == 'Hujan' ? 'selected' : '' }}>Hujan</option>
+                               <option value="Hujan Petir" {{ old('cuaca') == 'Hujan Petir' ? 'selected' : '' }}>Hujan
+                                   Petir</option>
                            </select>
                        </div>
                    </div>

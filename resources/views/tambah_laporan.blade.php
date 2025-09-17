@@ -73,9 +73,9 @@
                            <label for="cuaca" class="form-label">Cuaca</label>
                            <select name="cuaca" id="cuaca" class="form-select" required>
                                <option value="" selected disabled>Pilih Cuaca</option>
-                               <option value="cerah" {{ old('cuaca') == 'cerah' ? 'selected' : '' }}>Cerah</option>
-                               <option value="hujan" {{ old('cuaca') == 'hujan' ? 'selected' : '' }}>Hujan</option>
-                               <option value="berawan" {{ old('cuaca') == 'berawan' ? 'selected' : '' }}>Berawan
+                               <option value="Cerah" {{ old('cuaca') == 'Cerah' ? 'selected' : '' }}>Cerah</option>
+                               <option value="Hujan" {{ old('cuaca') == 'Hujan' ? 'selected' : '' }}>Hujan</option>
+                               <option value="Berawan" {{ old('cuaca') == 'Berawan' ? 'selected' : '' }}>Berawan
                                </option>
                            </select>
                        </div>

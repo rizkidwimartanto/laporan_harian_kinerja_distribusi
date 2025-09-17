@@ -118,14 +118,14 @@
                                                                 <select name="cuaca" id="cuaca"
                                                                     class="form-select" required>
                                                                     <option value="" disabled>Pilih Cuaca</option>
-                                                                    <option value="cerah"
-                                                                        {{ old('cuaca', $laporan->cuaca) == 'cerah' ? 'selected' : '' }}>
+                                                                    <option value="Cerah"
+                                                                        {{ old('cuaca', $laporan->cuaca) == 'Cerah' ? 'selected' : '' }}>
                                                                         Cerah</option>
-                                                                    <option value="hujan"
-                                                                        {{ old('cuaca', $laporan->cuaca) == 'hujan' ? 'selected' : '' }}>
+                                                                    <option value="Hujan"
+                                                                        {{ old('cuaca', $laporan->cuaca) == 'Hujan' ? 'selected' : '' }}>
                                                                         Hujan</option>
-                                                                    <option value="berawan"
-                                                                        {{ old('cuaca', $laporan->cuaca) == 'berawan' ? 'selected' : '' }}>
+                                                                    <option value="Berawan"
+                                                                        {{ old('cuaca', $laporan->cuaca) == 'Berawan' ? 'selected' : '' }}>
                                                                         Berawan</option>
                                                                 </select>
                                                             </div>

@@ -16,7 +16,11 @@
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
+<<<<<<< HEAD
             background: url('{{ asset('public/img/background_laporan.png') }}') no-repeat center fixed;
+=======
+            background: url('{{ asset('public/img/Background_Danantara.png') }}') no-repeat center fixed;
+>>>>>>> 4db14a21c8c90a59cf0922205235d2babe41bae3
             background-size: cover;
             background-position: center 1px;
         }
@@ -26,22 +30,26 @@
             top: 15px;
         }
 
-        P {
+        p {
             font-size: 12px;
-        }
-
-        .custom-table,
-        .custom-table td {
-            background-color: transparent !important;
         }
 
         .custom-table th {
             height: 50px;
             vertical-align: middle;
             text-align: center;
-            background-color: aqua;
             padding-left: 20px;
             padding-right: 20px;
+        }
+
+        .custom-table,
+        .custom-table td,
+        .custom-table th {
+            background-color: transparent !important;
+        }
+
+        span {
+            font-weight: bold;
         }
     </style>
 </head>

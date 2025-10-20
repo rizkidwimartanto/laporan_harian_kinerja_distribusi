@@ -16,11 +16,7 @@
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
-<<<<<<< HEAD
             background: url('{{ asset('public/img/background_laporan.png') }}') no-repeat center fixed;
-=======
-            background: url('{{ asset('public/img/Background_Danantara.png') }}') no-repeat center fixed;
->>>>>>> 4db14a21c8c90a59cf0922205235d2babe41bae3
             background-size: cover;
             background-position: center 1px;
         }

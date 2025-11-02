@@ -10,7 +10,7 @@ class LaporanHarianController extends Controller
 {
   public function index()
   {
-    Carbon::setLocale('id'); 
+    Carbon::setLocale('id');
     $data = [
       'laporanHariIni' => LaporanHarianModel::whereDate('created_at', Carbon::today())->get(),
       'tanggal_sekarang' => Carbon::now()->translatedFormat('l, d F Y'),
@@ -69,12 +69,12 @@ class LaporanHarianController extends Controller
       'juara4_ulp' => 'required',
       'jumlah_kwhmeter_juara4_ulp' => 'required',
       'ganti_meter_tua_prabayar' => 'required',
-      'ganti_meter_tua_pascabayar' => 	'required',
-      'saldo_meter_tua' => 	'required',
-      'pelanggan_vvip_jumlahpelanggan' => 	'required',
-      'pelanggan_vvip_padam' => 	'required',
-      'pelanggan_vip_jumlahpelanggan' => 	'required',
-      'pelanggan_vip_padam' => 	'required',
+      'ganti_meter_tua_pascabayar' =>   'required',
+      'saldo_meter_tua' =>   'required',
+      'pelanggan_vvip_jumlahpelanggan' =>   'required',
+      'pelanggan_vvip_padam' =>   'required',
+      'pelanggan_vip_jumlahpelanggan' =>   'required',
+      'pelanggan_vip_padam' =>   'required',
     ]);
 
     LaporanHarianModel::create($request->all());
@@ -139,5 +139,5 @@ class LaporanHarianController extends Controller
     $laporan = LaporanHarianModel::findOrFail($id);
     $laporan->update($request->all());
     return redirect()->route('laporan-harian.admin')->with('success', 'Laporan harian berhasil diupdate.');
-}
+  }
 }

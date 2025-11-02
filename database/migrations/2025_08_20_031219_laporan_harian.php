@@ -42,10 +42,14 @@ return new class extends Migration
             $table->string('beban_sistem_malam');
             $table->string('target_p2tl');
             $table->string('realisasi_p2tl');
-            $table->string('top_performance');
-            $table->string('jumlah_kwhmeter_top_performance');
-            $table->string('bottom_performance');
-            $table->string('jumlah_kwhmeter_bottom_performance');
+            $table->string('juara1_ulp');
+            $table->string('jumlah_kwhmeter_juara1_ulp');
+            $table->string('juara2_ulp');
+            $table->string('jumlah_kwhmeter_juara2_ulp');
+            $table->string('juara3_ulp');
+            $table->string('jumlah_kwhmeter_juara3_ulp');
+            $table->string('juara4_ulp');
+            $table->string('jumlah_kwhmeter_juara4_ulp');
             $table->string('ganti_meter_tua_prabayar');
             $table->string('ganti_meter_tua_pascabayar');
             $table->string('saldo_meter_tua');

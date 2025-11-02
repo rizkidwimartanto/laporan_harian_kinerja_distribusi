@@ -74,6 +74,10 @@
                         <th>Jumlah kWh meter Juara 1 ULP</th>
                         <th>Juara 2 ULP</th>
                         <th>Jumlah kWh meter Juara 2 ULP</th>
+                        <th>Juara 3 ULP</th>
+                        <th>Jumlah kWh meter Juara 3 ULP</th>
+                        <th>Juara 4 ULP</th>
+                        <th>Jumlah kWh meter Juara 4 ULP</th>
                         <th>Ganti Meter Tua Prabayar</th>
                         <th>Ganti Meter Tua Pascabayar</th>
                         <th>Saldo Meter Tua</th>
@@ -700,6 +704,10 @@
                             <td>{{ $laporan->jumlah_kwhmeter_juara1_ulp }}</td>
                             <td>{{ $laporan->juara2_ulp }}</td>
                             <td>{{ $laporan->jumlah_kwhmeter_juara2_ulp }}</td>
+                            <td>{{ $laporan->juara3_ulp }}</td>
+                            <td>{{ $laporan->jumlah_kwhmeter_juara3_ulp }}</td>
+                            <td>{{ $laporan->juara4_ulp }}</td>
+                            <td>{{ $laporan->jumlah_kwhmeter_juara4_ulp }}</td>
                             <td>{{ $laporan->ganti_meter_tua_prabayar }}</td>
                             <td>{{ $laporan->ganti_meter_tua_pascabayar }}</td>
                             <td>{{ $laporan->saldo_meter_tua }}</td>

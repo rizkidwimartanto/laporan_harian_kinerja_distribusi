@@ -39,7 +39,8 @@
         }
 
         .custom-table,
-        .custom-table td, .custom-table th {
+        .custom-table td,
+        .custom-table th {
             background-color: transparent !important;
         }
 
@@ -94,10 +95,11 @@
                                     style="font-size: 12px; width:15%"><span style="font-weight:bold;"><img
                                             src="{{ asset('public/img/hujan.png') }}" alt="hujan" width="34px"
                                             height="34px"></span></button>
-                                <button class="btn {{ $laporan->cuaca === 'Hujan Petir' ? 'border-danger border-5' : '' }}"
+                                <button
+                                    class="btn {{ $laporan->cuaca === 'Hujan Petir' ? 'border-danger border-5' : '' }}"
                                     style="font-size: 12px; width:15%"><span style="font-weight:bold;"><img
-                                            src="{{ asset('public/img/hujan petir.png') }}" alt="hujan petir" width="34px"
-                                            height="34px"></span></button>
+                                            src="{{ asset('public/img/hujan petir.png') }}" alt="hujan petir"
+                                            width="34px" height="34px"></span></button>
                             </p>
                             <p class="d-flex justify-content-between">
                                 <span>
@@ -130,7 +132,8 @@
                                         width="30px" height="30px">
                                     Yantek Performance
                                 </span>
-                                <button class="btn border-light" style="font-size: 12px; background-color:#B6D5A3">Under
+                                <button class="btn border-light"
+                                    style="font-size: 12px; background-color:#B6D5A3">Under
                                     Perf (<35) : {{ $laporan->yantek_performance_under_perf }}</button>
                                         <button class="btn border-light"
                                             style="font-size: 12px; background-color:#B6D5A3">Middle
@@ -141,8 +144,8 @@
                             </p>
                             <p class="d-flex justify-content-between">
                                 <span>
-                                    <img src="{{ asset('public/img/pln_mobile.jpg') }}" alt="pln_mobile" width="30px"
-                                        height="30px">
+                                    <img src="{{ asset('public/img/pln_mobile.jpg') }}" alt="pln_mobile"
+                                        width="30px" height="30px">
                                     Rating PLN Mobile
                                 </span>
                                 <button class="btn"
@@ -239,25 +242,55 @@
                                     style="font-size: 12px; width:80%; border:3px solid #B6D5A3;"><span
                                         style="font-weight:bold;">{{ $laporan->realisasi_p2tl }}</span></button>
                             </p>
-                            <p class="d-flex justify-content-between">
+                            <p class="d-flex justify-content-between text-center">
                                 <span>
                                     <img src="{{ asset('public/img/top_performance.png') }}" alt="top_performance"
                                         width="30px" height="30px"> Top Performance
                                 </span>
-                                <button class="btn"
-                                    style="font-size: 12px; width:70%; border:3px solid #B6D5A3;"><span
-                                        style="font-weight:bold;">{{ $laporan->top_performance }} :
-                                        {{ $laporan->jumlah_kwhmeter_top_performance }} kWh</span></button>
-                            </p>
-                            <p class="d-flex justify-content-between">
                                 <span>
                                     <img src="{{ asset('public/img/bottom_performance.png') }}"
                                         alt="bottom_performance" width="30px" height="30px"> Bottom Performance
                                 </span>
+                            </p>
+                            <p class="d-flex justify-content-between">
                                 <button class="btn"
-                                    style="font-size: 12px; width:70%; border:3px solid #B6D5A3;"><span
-                                        style="font-weight:bold;">{{ $laporan->bottom_performance }} :
-                                        {{ $laporan->jumlah_kwhmeter_bottom_performance }} kWh</span></button>
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara1_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara1_ulp }} kWh</span></button>
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara4_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara4_ulp }} kWh</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara2_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara2_ulp }} kWh</span></button>
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara3_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara3_ulp }} kWh</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara3_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara3_ulp }} kWh</span></button>
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara2_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara2_ulp }} kWh</span></button>
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara4_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara4_ulp }} kWh</span></button>
+                                <button class="btn"
+                                    style="font-size: 12px; width:40%; border:3px solid #B6D5A3;"><span
+                                        style="font-weight:bold;">{{ $laporan->juara1_ulp }} :
+                                        {{ $laporan->jumlah_kwhmeter_juara1_ulp }} kWh</span></button>
                             </p>
                             <p class="d-flex justify-content-between">
                                 <span>
@@ -356,18 +389,24 @@
                             <tbody>
                                 <tr>
                                     <td>Kategori i VVIP</td>
-                                    <td class="text-center" style="border: 3px solid #B6D5A3;">{{ $laporan->pelanggan_vvip_jumlahpelanggan }}</td>
-                                    <td class="text-center" style="border: 3px solid #B6D5A3;">{{ $laporan->pelanggan_vvip_padam }}</td>
+                                    <td class="text-center" style="border: 3px solid #B6D5A3;">
+                                        {{ $laporan->pelanggan_vvip_jumlahpelanggan }}</td>
+                                    <td class="text-center" style="border: 3px solid #B6D5A3;">
+                                        {{ $laporan->pelanggan_vvip_padam }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kategori ii VIP</td>
-                                    <td class="text-center" style="border: 3px solid #B6D5A3;">{{ $laporan->pelanggan_vip_jumlahpelanggan }}</td>
-                                    <td class="text-center" style="border: 3px solid #B6D5A3;">{{ $laporan->pelanggan_vip_padam }}</td>
+                                    <td class="text-center" style="border: 3px solid #B6D5A3;">
+                                        {{ $laporan->pelanggan_vip_jumlahpelanggan }}</td>
+                                    <td class="text-center" style="border: 3px solid #B6D5A3;">
+                                        {{ $laporan->pelanggan_vip_padam }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kategori iii Prioritas</td>
-                                    <td class="text-center" style="border: 3px solid #B6D5A3;">{{ $laporan->pelanggan_prioritas_jumlahpelanggan }}</td>
-                                    <td class="text-center" style="border: 3px solid #B6D5A3;">{{ $laporan->pelanggan_prioritas_padam }}</td>
+                                    <td class="text-center" style="border: 3px solid #B6D5A3;">
+                                        {{ $laporan->pelanggan_prioritas_jumlahpelanggan }}</td>
+                                    <td class="text-center" style="border: 3px solid #B6D5A3;">
+                                        {{ $laporan->pelanggan_prioritas_padam }}</td>
                                 </tr>
                             </tbody>
                         </table>

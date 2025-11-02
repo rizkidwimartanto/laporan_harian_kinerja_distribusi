@@ -295,60 +295,80 @@
                        </div>
                    </div>
                    <div class="col-3">
-                       <div class="mb-3">
-                           <label for="top_performance" class="form-label">Top Performance</label>
-                           <select name="top_performance" id="top_performance" class="form-select" required>
-                               <option value="" selected disabled>Pilih Top Performance</option>
-                               <option value="ULP Demak"
-                                   {{ old('top_performance') == 'ULP Demak' ? 'selected' : '' }}>ULP Demak</option>
-                               <option value="ULP Tegowanu"
-                                   {{ old('top_performance') == 'ULP Tegowanu' ? 'selected' : '' }}>ULP Tegowanu
-                               </option>
-                               <option value="ULP Purwodadi"
-                                   {{ old('top_performance') == 'ULP Purwodadi' ? 'selected' : '' }}>ULP Purwodadi
-                               </option>
-                               <option value="ULP Wirosari"
-                                   {{ old('top_performance') == 'ULP Wirosari' ? 'selected' : '' }}>ULP Wirosari
-                               </option>
-                           </select>
-                       </div>
+                       <label for="juara1_ulp" class="form-label">Juara 1 ULP</label>
+                       <select name="juara1_ulp" id="juara1_ulp" class="form-select" required>
+                           <option value="" selected disabled>Pilih ULP</option>
+                           <option value="ULP Demak">ULP Demak</option>
+                           <option value="ULP Tegowanu">ULP Tegowanu</option>
+                           <option value="ULP Purwodadi">ULP Purwodadi</option>
+                           <option value="ULP Wirosari">ULP Wirosari</option>
+                       </select>
                    </div>
                    <div class="col-3">
                        <div class="mb-3">
-                           <label for="jumlah_kwhmeter_top_performance" class="form-label">Jumlah kWhmeter Top
+                           <label for="jumlah_kwhmeter_juara1_ulp" class="form-label">Jumlah kWhmeter Juara 1
+                               ULP</label>
+                           <input type="text" class="form-control" id="jumlah_kwhmeter_juara1_ulp"
+                               name="jumlah_kwhmeter_juara1_ulp" required
+                               value="{{ old('jumlah_kwhmeter_juara1_ulp') }}">
+                       </div>
+                   </div>
+                   <div class="col-3">
+                       <label for="juara2_ulp" class="form-label">Juara 2 ULP</label>
+                       <select name="juara2_ulp" id="juara2_ulp" class="form-select" required>
+                           <option value="" selected disabled>Pilih ULP</option>
+                           <option value="ULP Demak">ULP Demak</option>
+                           <option value="ULP Tegowanu">ULP Tegowanu</option>
+                           <option value="ULP Purwodadi">ULP Purwodadi</option>
+                           <option value="ULP Wirosari">ULP Wirosari</option>
+                       </select>
+                   </div>
+                   <div class="col-3">
+                       <div class="mb-3">
+                           <label for="jumlah_kwhmeter_juara2_ulp" class="form-label">Jumlah kWhmeter Juara 2
+                               ULP</label>
+                           Performance</label>
+                           <input type="text" class="form-control" id="jumlah_kwhmeter_juara2_ulp"
+                               name="jumlah_kwhmeter_juara2_ulp" required
+                               value="{{ old('jumlah_kwhmeter_juara2_ulp') }}">
+                       </div>
+                   </div>
+                   <div class="col-3">
+                       <label for="juara3_ulp" class="form-label">Juara 3 ULP</label>
+                       <select name="juara3_ulp" id="juara3_ulp" class="form-select" required>
+                           <option value="" selected disabled>Pilih ULP</option>
+                           <option value="ULP Demak">ULP Demak</option>
+                           <option value="ULP Tegowanu">ULP Tegowanu</option>
+                           <option value="ULP Purwodadi">ULP Purwodadi</option>
+                           <option value="ULP Wirosari">ULP Wirosari</option>
+                       </select>
+                   </div>
+                   <div class="col-3">
+                       <div class="mb-3">
+                           <label for="jumlah_kwhmeter_juara3_ulp" class="form-label">Jumlah kWhmeter Juara 3
+                               ULP</label>
+                           <input type="text" class="form-control" id="jumlah_kwhmeter_juara3_ulp"
+                               name="jumlah_kwhmeter_juara3_ulp" required
+                               value="{{ old('jumlah_kwhmeter_juara3_ulp') }}">
+                       </div>
+                   </div>
+                   <div class="col-3">
+                       <label for="juara4_ulp" class="form-label">Juara 4 ULP</label>
+                       <select name="juara4_ulp" id="juara4_ulp" class="form-select" required>
+                           <option value="" selected disabled>Pilih ULP</option>
+                           <option value="ULP Demak">ULP Demak</option>
+                           <option value="ULP Tegowanu">ULP Tegowanu</option>
+                           <option value="ULP Purwodadi">ULP Purwodadi</option>
+                           <option value="ULP Wirosari">ULP Wirosari</option>
+                       </select>
+                   </div>
+                   <div class="col-3">
+                       <div class="mb-3">
+                           <label for="jumlah_kwhmeter_juara4_ulp" class="form-label">Jumlah kWhmeter Juara 4
                                Performance</label>
-                           <input type="text" class="form-control" id="jumlah_kwhmeter_top_performance"
-                               name="jumlah_kwhmeter_top_performance" required
-                               value="{{ old('jumlah_kwhmeter_top_performance') }}">
-                       </div>
-                   </div>
-                   <div class="col-3">
-                       <div class="mb-3">
-                           <label for="bottom_performance" class="form-label">Bottom Performance</label>
-                           <select name="bottom_performance" id="bottom_performance" class="form-select" required
-                               value="{{ old('total_wo') }}">
-                               <option value="" selected disabled>Pilih Bottom Performance</option>
-                               <option value="ULP Demak"
-                                   {{ old('bottom_performance') == 'ULP Demak' ? 'selected' : '' }}>ULP Demak</option>
-                               <option value="ULP Tegowanu"
-                                   {{ old('bottom_performance') == 'ULP Tegowanu' ? 'selected' : '' }}>ULP Tegowanu
-                               </option>
-                               <option value="ULP Purwodadi"
-                                   {{ old('bottom_performance') == 'ULP Purwodadi' ? 'selected' : '' }}>ULP Purwodadi
-                               </option>
-                               <option value="ULP Wirosari"
-                                   {{ old('bottom_performance') == 'ULP Wirosari' ? 'selected' : '' }}>ULP Wirosari
-                               </option>
-                           </select>
-                       </div>
-                   </div>
-                   <div class="col-3">
-                       <div class="mb-3">
-                           <label for="jumlah_kwhmeter_bottom_performance" class="form-label">Jumlah kWhmeter Bottom
-                               Performance</label>
-                           <input type="text" class="form-control" id="jumlah_kwhmeter_bottom_performance"
-                               name="jumlah_kwhmeter_bottom_performance" required
-                               value="{{ old('jumlah_kwhmeter_bottom_performance') }}">
+                           <input type="text" class="form-control" id="jumlah_kwhmeter_juara4_ulp"
+                               name="jumlah_kwhmeter_juara4_ulp" required
+                               value="{{ old('jumlah_kwhmeter_juara4_ulp') }}">
                        </div>
                    </div>
                    <div class="col-3">

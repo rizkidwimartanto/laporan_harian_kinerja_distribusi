@@ -70,10 +70,10 @@
                         <th>Safety Performance Accident</th>
                         <th>Target P2TL</th>
                         <th>Realisasi P2TL</th>
-                        <th>Top Performance</th>
-                        <th>Jumlah kWh meter Top Performance</th>
-                        <th>Bottom Performance</th>
-                        <th>Jumlah kWh meter Bottom Performance</th>
+                        <th>Juara 1 ULP</th>
+                        <th>Jumlah kWh meter Juara 1 ULP</th>
+                        <th>Juara 2 ULP</th>
+                        <th>Jumlah kWh meter Juara 2 ULP</th>
                         <th>Ganti Meter Tua Prabayar</th>
                         <th>Ganti Meter Tua Pascabayar</th>
                         <th>Saldo Meter Tua</th>
@@ -419,25 +419,23 @@
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="mb-3">
-                                                                <label for="top_performance" class="form-label">Top
-                                                                    Performance</label>
-                                                                <select name="top_performance" id="top_performance"
+                                                                <label for="juara1_ulp" class="form-label">Juara 1 ULP</label>
+                                                                <select name="juara1_ulp" id="juara1_ulp"
                                                                     class="form-select" required>
-                                                                    <option value="" selected disabled>Pilih Top
-                                                                        Performance</option>
+                                                                    <option value="" selected disabled>Pilih Juara 1 ULP</option>
                                                                     <option value="ULP Demak"
-                                                                        {{ old('top_performance', $laporan->top_performance) == 'ULP Demak' ? 'selected' : '' }}>
+                                                                        {{ old('juara1_ulp', $laporan->juara1_ulp) == 'ULP Demak' ? 'selected' : '' }}>
                                                                         ULP Demak</option>
                                                                     <option value="ULP Tegowanu"
-                                                                        {{ old('top_performance', $laporan->top_performance) == 'ULP Tegowanu' ? 'selected' : '' }}>
+                                                                        {{ old('juara1_ulp', $laporan->juara1_ulp) == 'ULP Tegowanu' ? 'selected' : '' }}>
                                                                         ULP Tegowanu
                                                                     </option>
                                                                     <option value="ULP Purwodadi"
-                                                                        {{ old('top_performance', $laporan->top_performance) == 'ULP Purwodadi' ? 'selected' : '' }}>
+                                                                        {{ old('juara1_ulp', $laporan->juara1_ulp) == 'ULP Purwodadi' ? 'selected' : '' }}>
                                                                         ULP Purwodadi
                                                                     </option>
                                                                     <option value="ULP Wirosari"
-                                                                        {{ old('top_performance', $laporan->top_performance) == 'ULP Wirosari' ? 'selected' : '' }}>
+                                                                        {{ old('juara1_ulp', $laporan->juara1_ulp) == 'ULP Wirosari' ? 'selected' : '' }}>
                                                                         ULP Wirosari
                                                                     </option>
                                                                 </select>
@@ -445,37 +443,35 @@
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="mb-3">
-                                                                <label for="jumlah_kwhmeter_top_performance"
-                                                                    class="form-label">Jumlah kWhmeter Top
-                                                                    Performance</label>
+                                                                <label for="jumlah_kwhmeter_juara1_ulp"
+                                                                    class="form-label">Jumlah kWhmeter Juara 1 ULP</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="jumlah_kwhmeter_top_performance"
-                                                                    name="jumlah_kwhmeter_top_performance" required
-                                                                    value="{{ old('jumlah_kwhmeter_top_performance', $laporan->jumlah_kwhmeter_top_performance) }}">
+                                                                    id="jumlah_kwhmeter_juara1_ulp"
+                                                                    name="jumlah_kwhmeter_juara1_ulp" required
+                                                                    value="{{ old('jumlah_kwhmeter_juara1_ulp', $laporan->jumlah_kwhmeter_juara1_ulp) }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="mb-3">
-                                                                <label for="bottom_performance"
-                                                                    class="form-label">Bottom Performance</label>
-                                                                <select name="bottom_performance"
-                                                                    id="bottom_performance" class="form-select"
-                                                                    required value="{{ old('total_wo') }}">
+                                                                <label for="juara2_ulp" class="form-label">Juara 2 ULP</label>
+                                                                <select name="juara2_ulp" id="juara2_ulp"
+                                                                    class="form-select" required
+                                                                    value="{{ old('total_wo') }}">
                                                                     <option value="" selected disabled>Pilih
-                                                                        Bottom Performance</option>
+                                                                        Juara 2 ULP</option>
                                                                     <option value="ULP Demak"
-                                                                        {{ old('bottom_performance', $laporan->bottom_performance) == 'ULP Demak' ? 'selected' : '' }}>
+                                                                        {{ old('juara2_ulp', $laporan->juara2_ulp) == 'ULP Demak' ? 'selected' : '' }}>
                                                                         ULP Demak</option>
                                                                     <option value="ULP Tegowanu"
-                                                                        {{ old('bottom_performance', $laporan->bottom_performance) == 'ULP Tegowanu' ? 'selected' : '' }}>
+                                                                        {{ old('juara2_ulp', $laporan->juara2_ulp) == 'ULP Tegowanu' ? 'selected' : '' }}>
                                                                         ULP Tegowanu
                                                                     </option>
                                                                     <option value="ULP Purwodadi"
-                                                                        {{ old('bottom_performance', $laporan->bottom_performance) == 'ULP Purwodadi' ? 'selected' : '' }}>
+                                                                        {{ old('juara2_ulp', $laporan->juara2_ulp) == 'ULP Purwodadi' ? 'selected' : '' }}>
                                                                         ULP Purwodadi
                                                                     </option>
                                                                     <option value="ULP Wirosari"
-                                                                        {{ old('bottom_performance', $laporan->bottom_performance) == 'ULP Wirosari' ? 'selected' : '' }}>
+                                                                        {{ old('juara2_ulp', $laporan->juara2_ulp) == 'ULP Wirosari' ? 'selected' : '' }}>
                                                                         ULP Wirosari
                                                                     </option>
                                                                 </select>
@@ -483,13 +479,84 @@
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="mb-3">
-                                                                <label for="jumlah_kwhmeter_bottom_performance"
-                                                                    class="form-label">Jumlah kWhmeter Bottom
-                                                                    Performance</label>
+                                                                <label for="jumlah_kwhmeter_juara2_ulp"
+                                                                    class="form-label">Jumlah kWhmeter Juara 2 ULP</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="jumlah_kwhmeter_bottom_performance"
-                                                                    name="jumlah_kwhmeter_bottom_performance" required
-                                                                    value="{{ old('jumlah_kwhmeter_bottom_performance', $laporan->jumlah_kwhmeter_bottom_performance) }}">
+                                                                    id="jumlah_kwhmeter_juara2_ulp"
+                                                                    name="jumlah_kwhmeter_juara2_ulp" required
+                                                                    value="{{ old('jumlah_kwhmeter_juara2_ulp', $laporan->jumlah_kwhmeter_juara2_ulp) }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="mb-3">
+                                                                <label for="juara3_ulp" class="form-label">Juara 3 ULP</label>
+                                                                <select name="juara3_ulp" id="juara3_ulp"
+                                                                    class="form-select" required
+                                                                    value="{{ old('total_wo') }}">
+                                                                    <option value="" selected disabled>Pilih
+                                                                        Juara 3 ULP</option>
+                                                                    <option value="ULP Demak"
+                                                                        {{ old('juara3_ulp', $laporan->juara3_ulp) == 'ULP Demak' ? 'selected' : '' }}>
+                                                                        ULP Demak</option>
+                                                                    <option value="ULP Tegowanu"
+                                                                        {{ old('juara3_ulp', $laporan->juara3_ulp) == 'ULP Tegowanu' ? 'selected' : '' }}>
+                                                                        ULP Tegowanu
+                                                                    </option>
+                                                                    <option value="ULP Purwodadi"
+                                                                        {{ old('juara3_ulp', $laporan->juara3_ulp) == 'ULP Purwodadi' ? 'selected' : '' }}>
+                                                                        ULP Purwodadi
+                                                                    </option>
+                                                                    <option value="ULP Wirosari"
+                                                                        {{ old('juara3_ulp', $laporan->juara3_ulp) == 'ULP Wirosari' ? 'selected' : '' }}>
+                                                                        ULP Wirosari
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="mb-3">
+                                                                <label for="jumlah_kwhmeter_juara3_ulp"
+                                                                    class="form-label">Jumlah kWhmeter Juara 3 ULP</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="jumlah_kwhmeter_juara3_ulp"
+                                                                    name="jumlah_kwhmeter_juara3_ulp" required
+                                                                    value="{{ old('jumlah_kwhmeter_juara3_ulp', $laporan->jumlah_kwhmeter_juara3_ulp) }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="mb-3">
+                                                                <label for="juara4_ulp" class="form-label">Juara 4 ULP</label>
+                                                                <select name="juara4_ulp" id="juara4_ulp"
+                                                                    class="form-select" required
+                                                                    value="{{ old('total_wo') }}">
+                                                                    <option value="" selected disabled>Pilih
+                                                                        Juara 4 ULP</option>
+                                                                    <option value="ULP Demak"
+                                                                        {{ old('juara4_ulp', $laporan->juara4_ulp) == 'ULP Demak' ? 'selected' : '' }}>
+                                                                        ULP Demak</option>
+                                                                    <option value="ULP Tegowanu"
+                                                                        {{ old('juara4_ulp', $laporan->juara4_ulp) == 'ULP Tegowanu' ? 'selected' : '' }}>
+                                                                        ULP Tegowanu
+                                                                    </option>
+                                                                    <option value="ULP Purwodadi"
+                                                                        {{ old('juara4_ulp', $laporan->juara4_ulp) == 'ULP Purwodadi' ? 'selected' : '' }}>
+                                                                        ULP Purwodadi
+                                                                    </option>
+                                                                    <option value="ULP Wirosari"
+                                                                        {{ old('juara4_ulp', $laporan->juara4_ulp) == 'ULP Wirosari' ? 'selected' : '' }}>
+                                                                        ULP Wirosari
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="mb-3">
+                                                                <label for="jumlah_kwhmeter_juara4_ulp"
+                                                                    class="form-label">Jumlah kWhmeter Juara 4 ULP</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="jumlah_kwhmeter_juara4_ulp"
+                                                                    name="jumlah_kwhmeter_juara4_ulp" required
+                                                                    value="{{ old('jumlah_kwhmeter_juara4_ulp', $laporan->jumlah_kwhmeter_juara4_ulp) }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-3">
@@ -629,10 +696,10 @@
                             <td>{{ $laporan->safety_performance_accident }}</td>
                             <td>{{ $laporan->target_p2tl }}</td>
                             <td>{{ $laporan->realisasi_p2tl }}</td>
-                            <td>{{ $laporan->top_performance }}</td>
-                            <td>{{ $laporan->jumlah_kwhmeter_top_performance }}</td>
-                            <td>{{ $laporan->bottom_performance }}</td>
-                            <td>{{ $laporan->jumlah_kwhmeter_bottom_performance }}</td>
+                            <td>{{ $laporan->juara1_ulp }}</td>
+                            <td>{{ $laporan->jumlah_kwhmeter_juara1_ulp }}</td>
+                            <td>{{ $laporan->juara2_ulp }}</td>
+                            <td>{{ $laporan->jumlah_kwhmeter_juara2_ulp }}</td>
                             <td>{{ $laporan->ganti_meter_tua_prabayar }}</td>
                             <td>{{ $laporan->ganti_meter_tua_pascabayar }}</td>
                             <td>{{ $laporan->saldo_meter_tua }}</td>

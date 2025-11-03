@@ -5,38 +5,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laporan Harian Kinerja Distribusi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="{{ asset('public/img/Logo_PLN.png') }}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
-            background: url('{{ asset('public/img/background_laporan.png') }}') no-repeat center top;
-            background-size: contain;
-            height: 100vh;
-            overflow: hidden;
+            background: url('{{ asset('public/img/Background_Danantara.png') }}') no-repeat center fixed;
+            background-size: cover;
+            background-position: center 1px;
+        }
+
+        .title_content {
             position: relative;
+            top: 10px;
         }
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1678px; /* samakan dengan resolusi background */
-            height: 768px;
+        p {
+            font-size: 12px;
         }
 
-        .data-text {
-            position: absolute;
-            font-size: 1vw;
-            font-weight: bold;
-            color: #000;
-        }
-
-        /* CUACA (opsional jika nanti diisi) */
-        .cuaca {
-            top: 19.5%;
-            left: 35%;
+        .custom-table th {
+            height: 50px;
+            vertical-align: middle;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .custom-table,
@@ -45,99 +44,24 @@
             background-color: transparent !important;
         }
 
-        /* TOTAL P0 */
-        .total-p0 {
-            top: 26.3%;
-            left: 51.5%;
-        }
-
-        /* TOTAL VCC MERAH */
-        .vcc-merah {
-            top: 30.4%;
-            left: 40.2%;
-        }
-
-        /* TOTAL VCC HITAM */
-        .vcc-hitam {
-            top: 30.4%;
-            left: 51.5%;
-        }
-
-        /* YANTEK PERFORMANCE */
-        .yantek-under {
-            top: 36%;
-            left: 37.5%;
-        }
-
-        .yantek-middle {
-            top: 36%;
-            left: 46.5%;
-        }
-
-        .yantek-top {
-            top: 36%;
-            left: 55.5%;
-        }
-
-        /* RATING PLN MOBILE */
-        .rating-mobile {
-            top: 40.3%;
-            left: 40%;
-        }
-
-        /* RPT / RCT */
-        .rpt-rct {
-            top: 44.5%;
-            left: 40%;
-        }
-
-        /* KINERJA PMT */
-        .pmt {
-            top: 48.5%;
-            left: 40%;
-        }
-
-        /* ANOMALI WO */
-        .anomaly {
-            top: 52.6%;
-            left: 40%;
-        }
-
-        /* SAFETY PERFORMANCE */
-        .safety {
-            top: 56.5%;
-            left: 40%;
+        span {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <div class="overlay">
-        @foreach ($laporanHariIni as $laporan)
-            <!-- TOTAL WO/PO -->
-            <p class="data-text total-wo">{{ $laporan->total_wo }}</p>
-            <p class="data-text total-p0">{{ $laporan->total_p0 }}</p>
-
-            <!-- TOTAL VCC -->
-            <p class="data-text vcc-merah">{{ $laporan->total_vcc_merah }}</p>
-            <p class="data-text vcc-hitam">{{ $laporan->total_vcc_hitam }}</p>
-
-            <!-- YANTEK PERFORMANCE -->
-            <p class="data-text yantek-under">{{ $laporan->yantek_performance_under_perf }}%</p>
-            <p class="data-text yantek-middle">{{ $laporan->yantek_performance_middle_perf }}%</p>
-            <p class="data-text yantek-top">{{ $laporan->yantek_performance_top_perf }}%</p>
-
-            <!-- RATING PLN MOBILE -->
-            <p class="data-text rating-mobile">{{ $laporan->rating_pln_mobile }}</p>
-
-            <!-- RPT / RCT -->
-            <p class="data-text rpt-rct">{{ $laporan->rpt_rct }}%</p>
-
-            <!-- KINERJA PMT -->
-            <p class="data-text pmt">{{ $laporan->kinerja_pmt }}</p>
-
-            <!-- ANOMALI WO -->
-            <p class="data-text anomaly">{{ $laporan->anomaly_wo }}</p>
+    <div class="container-fluid">
+        <a href="{{ route('laporan-harian.admin') }}" class="btn btn-primary"
+            style="position:fixed; width:200px; padding:30px; opacity:0;">
+            Kembali
+        </a>
+        <div style="padding-top:10px;">
+            <h4 class="text-center text-dark title_content">
+                Laporan Harian Kinerja Distribusi UP3 Grobogan
+            </h4>
+            <h4 class="text-center">{{ $tanggal_sekarang }}</h4>
+        </div>
 
         @if ($laporanHariIni->isEmpty())
             <h5 class="text-center">Belum ada laporan untuk hari ini.</h5>
@@ -491,6 +415,9 @@
             @endforeach
         @endif
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
